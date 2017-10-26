@@ -1,35 +1,26 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
-
-# styles
+styles
+======
 
 The goal of styles is to create and apply ggplot-style themes to base plots.
 
-## Installation
+Installation
+------------
 
 You can install styles from github with:
 
-```{r gh-installation, eval = FALSE}
+``` r
 # install.packages("devtools")
 devtools::install_github("lizhmartin/styles")
 ```
 
-## Example
+Example
+-------
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(styles)
 
 # create a new style:
@@ -73,7 +64,11 @@ example_plots()
 
 style(better)
 example_plots()
+```
+
+![](README-example-1.png)
+
+``` r
 
 remove_style()
-
 ```

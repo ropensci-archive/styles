@@ -8,5 +8,5 @@
 get_old_par <- function (style) {
   op <- par(no.readonly = TRUE)
   op <- op[names(style$par)]
-  .old_par <<- op
+  .cache$old_par <- op
 }

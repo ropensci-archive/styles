@@ -1,11 +1,10 @@
-#' @title Plot All
+#' @title Example Plots
 #'
-#' @description Plot four plots in layout to test style.
+#' @description Plots four plots (hist, bar, dot, and box) to demonstrate style.
 #'
 #' @export
 #'
-#'
-plot_all <- function () {
+example_plots <- function () {
 
   with(mtcars, hist(qsec))
 

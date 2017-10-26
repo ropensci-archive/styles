@@ -7,7 +7,7 @@
 #'
 remove_defaults <- function () {
 
-  package_styles <- .current_style[names(.current_style) != "par"]
+  package_styles <- .cache$current_style[names(.cache$current_style) != "par"]
   package_names <- names(package_styles)
 
   for (i in seq_along(package_styles)) {

@@ -8,7 +8,7 @@
 style <- function (style) {
   check_style()
   remove_style()
-  .current_style <<- style
+  .cache$current_style <- style
   get_old_par(style)
   par(style$par)
   apply_defaults(style)

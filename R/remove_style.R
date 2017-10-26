@@ -7,7 +7,7 @@
 #'
 remove_style <- function() {
   remove_shims()
-  par(.old_par)
+  par(.cache$old_par)
   remove_defaults()
-  .current_style <<- list()
+  .cache$current_style <- list()
 }
