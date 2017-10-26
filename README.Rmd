@@ -30,5 +30,62 @@ devtools::install_github("lizhmartin/styles")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## basic example code
+# create a new style:
+colour <- "blue"#greta:::greta_col("dark")
+colour_light <- scales::alpha(colour, 0.5)
+
+better <- new_style(par = list(pch = 16,
+                               fg = grey(0.6),
+                               col.axis = grey(0.4),
+                               col.lab = grey(0.2),
+                               las = 1,
+                               col.main = grey(0.4),
+                               col.sub = grey(0.4),
+                               tcl = -0.25),
+                    graphics = list(axis = list(hadj = 0.5),
+                                    hist.default = list(col = colour,
+                                                        border = "white",
+                                                        main = "",
+                                                        ylab = "count"),
+                                    plot.xy = list(col = colour,
+                                                   lwd = 2.5,
+                                                   cex = 1.5),
+                                    barplot.default = list(col = colour,
+                                                           border = NA,
+                                                           space = 0.3),
+                                    boxplot.default = list(col = colour_light,
+                                                           border = colour,
+                                                           pars = list(boxwex = 0.8,
+                                                                       staplewex = 0.5,
+                                                                       outwex = 0.5,
+                                                                       cex = 1,
+                                                                       whisklty = "solid")),
+                                    title = list(line = 2)))
+
+
+# use it for a bunch of different plots
+plot_all <- function () {
+
+  with(mtcars, hist(qsec))
+
+  plot(mpg ~ wt, data = mtcars)
+
+  tab <- tapply(mtcars$qsec, paste(mtcars$cyl, "cyl"), mean)
+  barplot(tab, ylab = "qsec")
+
+  boxplot(qsec ~ paste(mtcars$gear, "gear"),
+          data = mtcars,
+          ylab = "qsec")
+
+}
+
+plot_mat <- matrix(1:8, nrow = 2, byrow = FALSE)
+layout(plot_mat)
+
+plot_all()
+
+style(better)
+plot_all()
+
+remove_style()
 ```
