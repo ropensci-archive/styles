@@ -3,7 +3,7 @@
 styles
 ======
 
-The goal of styles is to create and apply ggplot-style themes to base plots.
+The goal of styles is to create and apply themes to base plots.
 
 Installation
 ------------
@@ -15,10 +15,10 @@ You can install styles from github with:
 devtools::install_github("lizhmartin/styles")
 ```
 
-Example
--------
+Examples
+--------
 
-This is a basic example which shows you how to solve a common problem:
+Let's compare default plot arguments to a styles:
 
 ``` r
 library(styles)
@@ -26,7 +26,6 @@ library(styles)
 # plot with internal style
 plot_mat <- matrix(1:8, nrow = 2, byrow = FALSE)
 layout(plot_mat)
-
 example_plots()
 
 style(better)
@@ -38,18 +37,44 @@ example_plots()
 ``` r
 
 remove_style()
-par(mfrow=c(1,1))
+```
 
+You can preview internal styles:
+
+``` r
+
+# preview internal style
+plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
+layout(plot_mat)
+plot_style(better)
+```
+
+![](README-unnamed-chunk-2-1.png)
+
+``` r
+remove_style()
+```
+
+You can create you're own styles:
+
+``` r
 # create a new style:
+plot(mpg ~ wt, data = mtcars)
+```
+
+![](README-unnamed-chunk-3-1.png)
+
+``` r
+
 blue <- new_style(graphics = list(plot.xy = list(col = "navyblue")))
 style(blue)
 plot(mpg ~ wt, data = mtcars)
 ```
 
-![](README-example-2.png)
+![](README-unnamed-chunk-3-2.png)
 
 ``` r
-remove_style()
+
 
 blue_stars <- new_style(par = list(pch = 8),
                   graphics = list(plot.xy = list(col = "navyblue")))
@@ -57,33 +82,30 @@ style(blue_stars)
 plot(mpg ~ wt, data = mtcars)
 ```
 
-![](README-example-3.png)
+![](README-unnamed-chunk-3-3.png)
+
+Once we have a style we like, we can apply it to all of our plots:
 
 ``` r
-plot(mpg ~ disp, data = mtcars)
-```
 
-![](README-example-4.png)
+plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
+layout(plot_mat)
 
-``` r
-remove_style()
+blue_dot_grey <- new_style(par = list(pch = 20,
+                                      cex=1.2,
+                                      bty="l",
+                                      col.axis = grey(0.4),
+                                      col.lab = grey(0.4),
+                                      fg = grey(0.4),
+                                      mar=c(4,4,1,1)),
+                           graphics = list(plot.xy = list(col = "navyblue")))
 
-blue_stars_lbox <- new_style(par = list(pch = 8,
-                                        bty="l"),
-                             graphics = list(plot.xy = list(col = "navyblue")))
-style(blue_stars_lbox)
+style(blue_dot_grey)
+
 plot(mpg ~ wt, data = mtcars)
-```
-
-![](README-example-5.png)
-
-``` r
 plot(mpg ~ disp, data = mtcars)
+plot(mpg ~ hp, data = mtcars)
+plot(mpg ~ drat, data = mtcars)
 ```
 
-![](README-example-6.png)
-
-``` r
-remove_style()
-###
-```
+![](README-unnamed-chunk-4-1.png)
