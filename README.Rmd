@@ -22,7 +22,7 @@ You can install styles from github with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("lizhmartin/styles")
+devtools::install_github("ropenscilabs/styles")
 ```
 
 ## Examples
@@ -31,31 +31,28 @@ Let's compare default plot arguments to a styles:
 
 ```{r example, fig.width=10}
 library(styles)
+library(default)
 
-# plot with internal style
 plot_mat <- matrix(1:8, nrow = 2, byrow = FALSE)
 layout(plot_mat)
+
+# plot with plot defaults; without setting a style
 example_plots()
 
+# plot with a style
 style(better)
 example_plots()
-
 remove_style()
 ```
 
 You can preview internal styles:
 
 ```{r}
-
-# preview internal style
-plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
-layout(plot_mat)
 plot_style(better)
 remove_style()
-
 ```
 
-You can create you're own styles:
+You can create your own styles:
 
 ```{r, fig.height = 5, fig.width = 5}
 blue_stars <- new_style(par = list(pch = 8),

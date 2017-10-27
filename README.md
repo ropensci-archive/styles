@@ -12,7 +12,7 @@ You can install styles from github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("lizhmartin/styles")
+devtools::install_github("ropenscilabs/styles")
 ```
 
 Examples
@@ -22,12 +22,15 @@ Let's compare default plot arguments to a styles:
 
 ``` r
 library(styles)
+library(default)
 
-# plot with internal style
 plot_mat <- matrix(1:8, nrow = 2, byrow = FALSE)
 layout(plot_mat)
+
+# plot with plot defaults; without setting a style
 example_plots()
 
+# plot with a style
 style(better)
 example_plots()
 ```
@@ -35,17 +38,12 @@ example_plots()
 ![](README-example-1.png)
 
 ``` r
-
 remove_style()
 ```
 
 You can preview internal styles:
 
 ``` r
-
-# preview internal style
-plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
-layout(plot_mat)
 plot_style(better)
 ```
 
@@ -55,7 +53,7 @@ plot_style(better)
 remove_style()
 ```
 
-You can create you're own styles:
+You can create your own styles:
 
 ``` r
 blue_stars <- new_style(par = list(pch = 8),
