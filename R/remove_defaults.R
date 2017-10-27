@@ -2,6 +2,8 @@
 #'
 #' @description Removes the defaults.
 #'
+#'@include remove_default.R
+#'
 remove_defaults <- function () {
 
   package_styles <- .cache$current_style[names(.cache$current_style) != "par"]

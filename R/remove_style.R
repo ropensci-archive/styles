@@ -2,6 +2,8 @@
 #'
 #' @description Removes the current style.
 #'
+#' @include remove_defaults.R remove_shims.R
+#'
 #' @export
 #'
 #'
