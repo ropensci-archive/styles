@@ -2,6 +2,8 @@
 #'
 #' @description Exports the new style
 #'
+#' @include check_style.R
+#'
 #' @export
 #'
 #'

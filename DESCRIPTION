@@ -9,3 +9,18 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+Collate: 
+    'add_shims.R'
+    'apply_defaults.R'
+    'check_style.R'
+    'new_style.R'
+    'better.R'
+    'example_plots.R'
+    'get_old_par.R'
+    'prep.R'
+    'remove_default.R'
+    'remove_defaults.R'
+    'remove_shims.R'
+    'remove_style.R'
+    'set_default.R'
+    'style.R'

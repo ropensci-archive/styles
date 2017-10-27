@@ -4,7 +4,7 @@
 \name{better}
 \alias{better}
 \title{Better}
-\format{An object of class \code{list} of length 2.}
+\format{An object of class \code{style} (inherits from \code{list}) of length 2.}
 \usage{
 better
 }

@@ -2,6 +2,10 @@
 #'
 #' @description Internal style
 #'
+#' @include new_style.R
+#'
+#' @export
+#'
 better <- new_style(par = list(pch = 16,
                              fg = grey(0.6),
                              col.axis = grey(0.4),
@@ -16,7 +20,7 @@ better <- new_style(par = list(pch = 16,
                                                       border = "white",
                                                       main = "",
                                                       ylab = "count"),
-                                  plot.xy = list(col = colour,
+                                  plot.xy = list(col = "navyblue",
                                                  lwd = 2.5,
                                                  cex = 1.1),
                                   barplot.default = list(col = "navyblue",
