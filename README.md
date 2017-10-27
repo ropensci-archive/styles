@@ -60,7 +60,30 @@ plot(mpg ~ wt, data = mtcars)
 ![](README-example-3.png)
 
 ``` r
+plot(mpg ~ disp, data = mtcars)
+```
+
+![](README-example-4.png)
+
+``` r
 remove_style()
 
+blue_stars_lbox <- new_style(par = list(pch = 8,
+                                        bty="l"),
+                             graphics = list(plot.xy = list(col = "navyblue")))
+style(blue_stars_lbox)
+plot(mpg ~ wt, data = mtcars)
+```
+
+![](README-example-5.png)
+
+``` r
+plot(mpg ~ disp, data = mtcars)
+```
+
+![](README-example-6.png)
+
+``` r
+remove_style()
 ###
 ```

@@ -54,8 +54,16 @@ blue_stars <- new_style(par = list(pch = 8),
                   graphics = list(plot.xy = list(col = "navyblue")))
 style(blue_stars)
 plot(mpg ~ wt, data = mtcars)
+plot(mpg ~ disp, data = mtcars)
 remove_style()
 
+blue_stars_lbox <- new_style(par = list(pch = 8,
+                                        bty="l"),
+                             graphics = list(plot.xy = list(col = "navyblue")))
+style(blue_stars_lbox)
+plot(mpg ~ wt, data = mtcars)
+plot(mpg ~ disp, data = mtcars)
+remove_style()
 ###
 
 ```
