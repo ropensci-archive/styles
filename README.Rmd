@@ -58,14 +58,6 @@ remove_style()
 You can create you're own styles:
 
 ```{r, fig.height = 5, fig.width = 5}
-# create a new style:
-plot(mpg ~ wt, data = mtcars)
-
-blue <- new_style(graphics = list(plot.xy = list(col = "navyblue")))
-style(blue)
-plot(mpg ~ wt, data = mtcars)
-
-
 blue_stars <- new_style(par = list(pch = 8),
                   graphics = list(plot.xy = list(col = "navyblue")))
 style(blue_stars)

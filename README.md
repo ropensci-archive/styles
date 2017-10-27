@@ -58,31 +58,13 @@ remove_style()
 You can create you're own styles:
 
 ``` r
-# create a new style:
-plot(mpg ~ wt, data = mtcars)
-```
-
-![](README-unnamed-chunk-3-1.png)
-
-``` r
-
-blue <- new_style(graphics = list(plot.xy = list(col = "navyblue")))
-style(blue)
-plot(mpg ~ wt, data = mtcars)
-```
-
-![](README-unnamed-chunk-3-2.png)
-
-``` r
-
-
 blue_stars <- new_style(par = list(pch = 8),
                   graphics = list(plot.xy = list(col = "navyblue")))
 style(blue_stars)
 plot(mpg ~ wt, data = mtcars)
 ```
 
-![](README-unnamed-chunk-3-3.png)
+![](README-unnamed-chunk-3-1.png)
 
 Once we have a style we like, we can apply it to all of our plots:
 
