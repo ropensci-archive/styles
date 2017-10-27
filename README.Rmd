@@ -29,7 +29,7 @@ devtools::install_github("ropenscilabs/styles")
 
 Let's compare default plot arguments to a styles:
 
-```{r example, fig.width=10}
+```{r example, fig.width=10, fig.align='center'}
 library(styles)
 library(default)
 
@@ -42,19 +42,17 @@ example_plots()
 # plot with a style
 style(better)
 example_plots()
-remove_style()
 ```
 
 You can preview internal styles:
 
-```{r}
+```{r, fig.align='center'}
 plot_style(better)
-remove_style()
 ```
 
 You can create your own styles:
 
-```{r, fig.height = 5, fig.width = 5}
+```{r, fig.height = 5, fig.width = 5, fig.align='center'}
 blue_stars <- new_style(par = list(pch = 8),
                   graphics = list(plot.xy = list(col = "navyblue")))
 style(blue_stars)
@@ -63,11 +61,7 @@ plot(mpg ~ wt, data = mtcars)
 
 Once we have a style we like, we can apply it to all of our plots:
 
-```{r, fig.height=6, fig.width=8}
-
-plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
-layout(plot_mat)
-
+```{r, fig.align='center'}
 blue_dot_grey <- new_style(par = list(pch = 20,
                                       cex=1.2,
                                       bty="l",
@@ -79,6 +73,8 @@ blue_dot_grey <- new_style(par = list(pch = 20,
 
 style(blue_dot_grey)
 
+plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
+layout(plot_mat)
 plot(mpg ~ wt, data = mtcars)
 plot(mpg ~ disp, data = mtcars)
 plot(mpg ~ hp, data = mtcars)

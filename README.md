@@ -35,11 +35,7 @@ style(better)
 example_plots()
 ```
 
-![](README-example-1.png)
-
-``` r
-remove_style()
-```
+<img src="README-example-1.png" style="display: block; margin: auto;" />
 
 You can preview internal styles:
 
@@ -47,11 +43,7 @@ You can preview internal styles:
 plot_style(better)
 ```
 
-![](README-unnamed-chunk-2-1.png)
-
-``` r
-remove_style()
-```
+<img src="README-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 You can create your own styles:
 
@@ -62,15 +54,11 @@ style(blue_stars)
 plot(mpg ~ wt, data = mtcars)
 ```
 
-![](README-unnamed-chunk-3-1.png)
+<img src="README-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 Once we have a style we like, we can apply it to all of our plots:
 
 ``` r
-
-plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
-layout(plot_mat)
-
 blue_dot_grey <- new_style(par = list(pch = 20,
                                       cex=1.2,
                                       bty="l",
@@ -82,10 +70,12 @@ blue_dot_grey <- new_style(par = list(pch = 20,
 
 style(blue_dot_grey)
 
+plot_mat <- matrix(1:4, nrow = 2, byrow = FALSE)
+layout(plot_mat)
 plot(mpg ~ wt, data = mtcars)
 plot(mpg ~ disp, data = mtcars)
 plot(mpg ~ hp, data = mtcars)
 plot(mpg ~ drat, data = mtcars)
 ```
 
-![](README-unnamed-chunk-4-1.png)
+<img src="README-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
