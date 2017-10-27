@@ -4,8 +4,6 @@
 #'
 #' @export
 #'
-#'
-
 remove_default <- function (fun_name, package = "graphics") {
 
   ns <- asNamespace(package)

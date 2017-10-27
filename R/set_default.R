@@ -2,10 +2,6 @@
 #'
 #' @description Set the defaults.
 #'
-#' @export
-#'
-#'
-
 set_default <- function (fun_name, value, package = "graphics") {
 
   ns <- asNamespace(package)

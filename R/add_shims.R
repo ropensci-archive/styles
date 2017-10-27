@@ -2,10 +2,6 @@
 #'
 #' @description Add new shims.
 #'
-#' @export
-#'
-#'
-#'
 add_shims <- function () {
   attach (.shims,
           name = "shims",

@@ -2,9 +2,6 @@
 #'
 #' @description Removes the defaults.
 #'
-#' @export
-#'
-#'
 remove_defaults <- function () {
 
   package_styles <- .cache$current_style[names(.cache$current_style) != "par"]

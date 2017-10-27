@@ -2,9 +2,6 @@
 #'
 #' @description Reapplys the defaults.
 #'
-#' @export
-#'
-#'
 apply_defaults <- function (style) {
 
   package_styles <- style[names(style) != "par"]
