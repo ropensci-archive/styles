@@ -17,6 +17,7 @@ Collate:
     'better.R'
     'example_plots.R'
     'get_old_par.R'
+    'plot_style.R'
     'prep.R'
     'remove_default.R'
     'remove_defaults.R'
