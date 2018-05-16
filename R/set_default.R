@@ -6,7 +6,7 @@ set_default <- function (fun_name, value, package = "graphics") {
 
   ns <- asNamespace(package)
   fun <- get(fun_name, ns)
-  default(fun) <- value
+  default::default(fun) <- value
 
   unlockBinding(fun_name, ns)
   ns[[fun_name]] <- fun
