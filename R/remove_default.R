@@ -8,7 +8,7 @@ remove_default <- function (fun_name, package = "graphics") {
 
   ns <- asNamespace(package)
   fun <- get(fun_name, ns)
-  fun <- reset_default(fun)
+  fun <- default::reset_default(fun)
 
   unlockBinding(fun_name, ns)
   ns[[fun_name]] <- fun
